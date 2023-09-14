@@ -26,6 +26,7 @@ function Input() {
   const [selectedFile, setSelectedFile] = useState(null);
   const filePickerRef = useRef(null);
   const [showEmojis, setShowEmojis] = useState(false);
+  const [rows, setRows] = useState(2);
 
   const sendPost = async () => {
     if (loading) return;
@@ -75,6 +76,12 @@ function Input() {
     setInput(input + emoji);
   };
 
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+    const textareaRows = e.target.value.split("\n").length;
+    setRows(textareaRows);
+  };
+
   return (
     <div
       className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y scrollbar-hide ${
@@ -93,10 +100,10 @@ function Input() {
         <div className={`${selectedFile && "pb-7"} ${input && "space-y-2.5"}`}>
           <textarea
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={handleInputChange}
             placeholder="What's happening?"
-            rows="2"
-            className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px] "
+            rows={rows} // ใช้ค่า rows จาก state
+            className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px]"
           />
 
           {selectedFile && (
