@@ -3,9 +3,10 @@ import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Sidebar from "../components/Sidebar"
 import Feed from "../components/Feed"
+import Comment from "../components/Comment"
+import Widgets from "../components/Widgets"
 
-const inter = Inter({ subsets: ['latin'] })
-
+// const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <div className="">
@@ -17,7 +18,8 @@ export default function Home() {
         <Sidebar/>
         
         <Feed/>
-        {/* Widgets */}
+        
+        <Widgets/>
 
         {/* Modal */}
       </main>

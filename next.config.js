@@ -8,4 +8,7 @@ module.exports = {
   images: {
     domains: ["freelogopng.com"],
   },
+  // images: {
+  //   domains: ["rb.gy"],
+  // },
 };
