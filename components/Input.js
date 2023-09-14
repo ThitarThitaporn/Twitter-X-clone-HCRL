@@ -7,8 +7,18 @@ import {
 } from "@heroicons/react/solid";
 import React from "react";
 import { useRef, useState } from "react";
-import { Picker } from "emoji-mart";
 // import "emoji-mart/css/emoji-mart.css";
+import { Picker } from 'emoji-mart'
+import { db, storage } from "../firebase";
+import {
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  updateDoc,
+} from "@firebase/firestore";
+import { getDownloadURL, ref, uploadString } from "@firebase/storage";
+
 
 function Input() {
   // const { data: session } = useSession();
@@ -17,15 +27,16 @@ function Input() {
   const [selectedFile, setSelectedFile] = useState(null);
   const filePickerRef = useRef(null);
   const [showEmojis, setShowEmojis] = useState(false);
+
+
   const sendPost = async () => {
     if (loading) return;
     setLoading(true);
-
     const docRef = await addDoc(collection(db, "posts"), {
-      id: session.user.uid,
-      username: session.user.name,
-      userImg: session.user.image,
-      tag: session.user.tag,
+      // id: session.user.uid,
+      // username: session.user.name,
+      // userImg: session.user.image,
+      // tag: session.user.tag,
       text: input,
       timestamp: serverTimestamp(),
     });
