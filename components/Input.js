@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { useRef, useState } from "react";
 // import "emoji-mart/css/emoji-mart.css";
-import { Picker } from 'emoji-mart'
+import { Picker } from "emoji-mart";
 import { db, storage } from "../firebase";
 import {
   addDoc,
@@ -19,7 +19,6 @@ import {
 } from "@firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "@firebase/storage";
 
-
 function Input() {
   // const { data: session } = useSession();
   const [input, setInput] = useState("");
@@ -27,7 +26,6 @@ function Input() {
   const [selectedFile, setSelectedFile] = useState(null);
   const filePickerRef = useRef(null);
   const [showEmojis, setShowEmojis] = useState(false);
-
 
   const sendPost = async () => {
     if (loading) return;
@@ -79,7 +77,7 @@ function Input() {
 
   return (
     <div
-      className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y-scroll scrollbar-hide ${
+      className={`border-b border-gray-700 p-3 flex space-x-3 overflow-y scrollbar-hide ${
         loading && "opacity-60"
       }`}
     >
@@ -98,7 +96,7 @@ function Input() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="What's happening?"
             rows="2"
-            className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px]"
+            className="bg-transparent outline-none text-[#d9d9d9] text-lg placeholder-gray-500 tracking-wide w-full min-h-[50px] "
           />
 
           {selectedFile && (
@@ -112,7 +110,7 @@ function Input() {
               <img
                 src={selectedFile}
                 alt=""
-                className="rounded-2xl max-h-80 object-contain"
+                className="rounded-2xl object-contain"
               />
             </div>
           )}

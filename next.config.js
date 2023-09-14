@@ -7,8 +7,7 @@ module.exports = nextConfig;
 module.exports = {
   images: {
     domains: ["freelogopng.com"],
+    // domains: ["rb.gy"],
   },
-  // images: {
-  //   domains: ["rb.gy"],
-  // },
+ 
 };
