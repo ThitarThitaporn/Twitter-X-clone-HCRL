@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "react-moment";
 
 function Post({ id, post, postPage }) {
   return (
@@ -27,8 +28,21 @@ function Post({ id, post, postPage }) {
               >
                 {post?.username}
               </h4>
-              <span>@{post?.tag}</span>
+              <span
+                className={`text-sm sm:text-[15px] ${!postPage && "ml-1.5"}`}
+              >
+                @{post?.tag}
+              </span>
             </div>
+            ·{" "}
+            <span className="hover:underline text-sm sm:text-[15px]">
+              {/* <Moment fromNow>{post?.timestamp?.toDate()}</Moment> */}
+            </span>
+            {!postPage && (
+              <p className="text-[#d9d9d9] text-[15px] sm:text-base mt-0.5">
+                {post?.text}
+              </p>
+            )}
           </div>
         </div>
       </div>
