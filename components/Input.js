@@ -18,6 +18,7 @@ import {
   updateDoc,
 } from "@firebase/firestore";
 import { getDownloadURL, ref, uploadString } from "@firebase/storage";
+import { useSession } from "next-auth/react";
 
 function Input() {
   // const { data: session } = useSession();
@@ -27,15 +28,16 @@ function Input() {
   const filePickerRef = useRef(null);
   const [showEmojis, setShowEmojis] = useState(false);
   const [rows, setRows] = useState(2);
+  const { data: session } = useSession();
 
   const sendPost = async () => {
     if (loading) return;
     setLoading(true);
     const docRef = await addDoc(collection(db, "posts"), {
-      // id: session.user.uid,
-      // username: session.user.name,
-      // userImg: session.user.image,
-      // tag: session.user.tag,
+      id: session.user.uid,
+      username: session.user.name,
+      userImg: session.user.image,
+      tag: session.user.tag,
       text: input,
       timestamp: serverTimestamp(),
     });
@@ -89,9 +91,7 @@ function Input() {
       }`}
     >
       <img
-        src={
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYaxT7xh-STW4Ih_qxYxZUyt8QYaNVEmFtsA&usqp=CAU"
-        }
+        src={session.user.image}
         alt=""
         className="h-11 w-11 rounded-full cursor-pointer"
         // onClick={signOut}
