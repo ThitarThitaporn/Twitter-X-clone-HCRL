@@ -37,20 +37,20 @@ export default function Home({ trendingResults, followResults, providers }) {
 }
 
 export async function getServerSideProps(context: any) {
-  const trendingResults = await fetch("https://api.twitter.com/1.1/trends/available.json").then(
-    (res) => res.json()
+  // const trendingResults = await fetch("").then(
+  //   (res) => res.json()
     
-  );
-  const followResults = await fetch("https://api.twitter.com/2/users/{}/following").then(
-    (res) => res.json()
-  );
+  // );
+  // const followResults = await fetch("").then(
+  //   (res) => res.json()
+  // );
   const providers = await getProviders();
   const session = await getSession(context);
 
   return {
     props: {
-      trendingResults,
-      followResults,
+      // trendingResults,
+      // followResults,
       providers,
       session,
     },
