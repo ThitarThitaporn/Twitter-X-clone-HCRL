@@ -3,6 +3,7 @@ import {
   ChartBarIcon,
   EmojiHappyIcon,
   PhotographIcon,
+  // GifIcon,
   XIcon,
 } from "@heroicons/react/solid";
 import React from "react";
@@ -150,6 +151,9 @@ function Input() {
                 <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
               </div>
 
+              {/* <div>
+                <GifIcon className="text-[#1d9bf0] h-[22px]" />
+              </div> */}
               {showEmojis && (
                 <Picker
                   onSelect={addEmoji}

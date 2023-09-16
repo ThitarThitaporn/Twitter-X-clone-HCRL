@@ -14,8 +14,10 @@ import {
   HeartIcon,
   ShareIcon,
   SwitchHorizontalIcon,
-  TrashIcon,
+  RefreshIcon,
+ 
 } from "@heroicons/react/outline";
+
 import {
   HeartIcon as HeartIconFilled,
   ChatIcon as ChatIconFilled,
@@ -128,7 +130,7 @@ function Post({ id, post, postPage }) {
               }}
             >
               <div className="icon group-hover:bg-red-600/10">
-                <TrashIcon className="h-5 group-hover:text-red-600" />
+                <RefreshIcon className="h-5 group-hover:text-red-600" />
               </div>
             </div>
           ) : (
@@ -164,9 +166,9 @@ function Post({ id, post, postPage }) {
             )}
           </div>
 
-          <div className="icon group">
+          {/* <div className="icon group">
             <ShareIcon className="h-5 group-hover:text-[#1d9bf0]" />
-          </div>
+          </div> */}
           <div className="icon group">
             <ChartBarIcon className="h-5 group-hover:text-[#1d9bf0]" />
           </div>

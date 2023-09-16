@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HomeIcon } from "@heroicons/react/solid";
+import { HomeIcon, StarIcon } from "@heroicons/react/solid";
 import {
   SearchIcon,
   BellIcon,
@@ -9,6 +9,7 @@ import {
   UserIcon,
   DotsCircleHorizontalIcon,
   DotsHorizontalIcon,
+  StarIconIcon,
 } from "@heroicons/react/outline";
 import SidebarLink from "./SidebarLink";
 import { signOut, useSession } from "next-auth/react";
@@ -30,7 +31,7 @@ function Sidebar() {
         <SidebarLink text="Notifications" Icon={BellIcon} />
         <SidebarLink text="Messages" Icon={InboxIcon} />
         <SidebarLink text="Lists" Icon={ClipboardListIcon} />
-        <SidebarLink text="Premium" Icon={XIcon} />
+        <SidebarLink text="Premium" Icon={StarIcon} />
         <SidebarLink text="Profile" Icon={UserIcon} />
         <SidebarLink text="More" Icon={DotsCircleHorizontalIcon} />
       </div>
