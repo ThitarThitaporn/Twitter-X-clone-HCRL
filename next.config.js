@@ -6,8 +6,6 @@ const nextConfig = {
 module.exports = nextConfig;
 module.exports = {
   images: {
-    domains: ["freelogopng.com"],
-    // domains: ["rb.gy"],
+    domains: ["freelogopng.com", "rb.gy"],
   },
- 
 };

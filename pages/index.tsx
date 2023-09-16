@@ -36,14 +36,16 @@ export default function Home({ trendingResults, followResults, providers }) {
   );
 }
 
-export async function getServerSideProps(context: any) {
-  // const trendingResults = await fetch("").then(
-  //   (res) => res.json()
-    
-  // );
-  // const followResults = await fetch("").then(
-  //   (res) => res.json()
-  // );
+export async function getServerSideProps(context) {
+  // Import the trend.json file using require
+  // const trendData = require('../components/data/Trend.json');
+  // const FollowData = require('../components/data/Follow.json');
+  
+  // const trendingResults = await trendData;
+
+ 
+  // const followResults = await FollowData;
+  
   const providers = await getProviders();
   const session = await getSession(context);
 
