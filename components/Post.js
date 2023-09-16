@@ -15,7 +15,6 @@ import {
   ShareIcon,
   SwitchHorizontalIcon,
   RefreshIcon,
- 
 } from "@heroicons/react/outline";
 
 import {
@@ -136,7 +135,7 @@ function Post({ id, post, postPage }) {
           ) : (
             <div className="flex items-center space-x-1 group">
               <div className="icon group-hover:bg-green-500/10">
-                <SwitchHorizontalIcon className="h-5 group-hover:text-green-500" />
+                <RefreshIcon className="h-5 group-hover:text-green-500" />
               </div>
             </div>
           )}
